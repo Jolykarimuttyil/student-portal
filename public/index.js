@@ -4,7 +4,11 @@ var HomePage = {
   template: "#home-page",
   data: function() {
     return {
-      message: "Welcome to Vue.js!"
+
+      message: "Joe!"
+
+     
+
     };
   },
   created: function() {},
