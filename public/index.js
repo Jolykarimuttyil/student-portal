@@ -4,7 +4,11 @@ var HomePage = {
   template: "#home-page",
   data: function() {
     return {
+
       message: "Joe!"
+
+     
+
     };
   },
   created: function() {},
