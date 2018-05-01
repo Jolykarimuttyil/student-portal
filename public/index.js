@@ -17,7 +17,8 @@ var HomePage = {
         resume_url: "www.richard-gang-resume.com",
         github_url: "www.github.com/richard-gang",
         photo: "www.richard-gang-photo.com"
-      }
+      },
+
     };
   },
   created: function() {},
@@ -28,7 +29,19 @@ var HomePage = {
 var UpdatePage = {
   template: "#update-page",
   data: function() {
-    return {};
+    return {
+      editStudentFirstName: "",
+      editStudentLastName: "",
+      editStudentEmail: "",
+      editStudentPhoneNumber: "",
+      editStudentBio: "",
+      editStudentLinkedinUrl: "",
+      editStudentTwitterHandle: "",
+      editStudentPersonalUrl: "",
+      editStudentResumeUrl: "",
+      editStudentGithubUrl: "",
+      editStudentPhoto: "",
+    };
   },
   created: function() {},
   methods: {
@@ -36,37 +49,37 @@ var UpdatePage = {
       console.log(" update", inputStudent);
       var params = {};
       if (this.editStudentFirstName) {
-        params.name = this.editStudentFirstName;
+        params.first_name = this.editStudentFirstName;
       }
       if (this.editStudentLastName) {
-        params.bio = this.editStudentBio;
+        params.last_name = this.editStudentBio;
       }
       if (this.editStudentEmail) {
-        params.bio = this.editStudentEmail;
+        params.email = this.editStudentEmail;
       }
       if (this.editStudentPhoneNumber) {
-        params.bio = this.editStudentPhoneNumber;
+        params.phone_number = this.editStudentPhoneNumber;
       }
       if (this.editStudentBio) {
         params.bio = this.editStudentBio;
       }
       if (this.editStudentLinkedinUrl) {
-        params.bio = this.editStudentLinkedinUrl;
+        params.linkedin_url = this.editStudentLinkedinUrl;
       }
       if (this.editStudentTwitterHandle) {
-        params.bio = this.editStudentTwitterHandle;
+        params.twitter_handle = this.editStudentTwitterHandle;
       }
       if (this.editStudentPersonalUrl) {
-        params.bio = this.editStudentPersonalUrl;
+        params.personal_url = this.editStudentPersonalUrl;
       }
       if (this.editStudentResumeUrl) {
-        params.bio = this.editStudentResumeUrl;
+        params.resume_url = this.editStudentResumeUrl;
       }
       if (this.editStudentGithubUrl) {
-        params.bio = this.editStudentGithubUrl;
+        params.github_url = this.editStudentGithubUrl;
       }
       if (this.editStudentPhoto) {
-        params.bio = this.editStudentPhoto;
+        params.photo = this.editStudentPhoto;
       }
       axios.patch("/v1/student/" + inputStudent.id, params).then(
         function(response) {
