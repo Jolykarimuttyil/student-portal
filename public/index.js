@@ -4,11 +4,9 @@ var HomePage = {
   template: "#home-page",
   data: function() {
     return {
+      message: "Joe!",
 
-      message: "Joe!"
-
-     
-
+      command: "Get going !"
     };
   },
   created: function() {},
