@@ -11,6 +11,7 @@
 <body>
   <div id="vue-app">
 <a href="/#/login">Login</a>
+<a href="/#/update">Update Student</a>
     <router-view></router-view>
     
 
@@ -57,4 +58,27 @@
     </div>
 
   </div>
+</template>
+<template id="update-page">
+   <div class="vue-component">
+
+    <div class="container">
+   <h1>Update the person</h1>
+      <div>
+        <div> Firstname: <input type="text" v-model="editStudentFirstName"> </div>
+        <div> Lastname: <input type="text" v-model="editStudentLastName"> </div>
+        <div> Email: <input type="text" v-model="editStudentEmail"> </div>
+        <div>Phone Number: <input type="text" v-model="editStudentPhoneNumber"></div>
+        <div>Bio: <input type="text" v-model="editStudentBio"></div>
+        <div>Linkdin Url: <input type="text" v-model="editStudentLinkedinUrl"></div>
+        <div>Twitter Handle: <input type="text" v-model="editStudentTwitterHandle"></div>
+        <div>Personal Url: <input type="text" v-model="editStudentPersonalUrl"></div>
+        <div>Resume Url: <input type="text" v-model="editStudentResumeUrl"></div>
+        <div>Github Url: <input type="text" v-model="editStudentGithubUrl"></div>
+        <div>Photo: <input type="text" v-model="editStudentPhoto"></div>
+         <button v-on:click="updateStudent(student)">Update</button>
+      </div>
+    </div>
+  </div>
+
 </template>
