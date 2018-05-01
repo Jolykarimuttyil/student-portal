@@ -1,20 +1,39 @@
 /* global Vue, VueRouter, axios */
 
+var HomePage = {
+  template: "#home-page",
+  data: function() {
+    return {
+      message: "This is your info: ",
+      student: {
+        first_name: "Richard",
+        last_name: "Gang",
+        email: "richard@email.com",
+        phone_number: "1112223333",
+        bio: "Up and coming underground rapper.",
+        linkedin_url: "www.linkedin.com/in/richard-gang",
+        twitter_handle: "www.twitter.com/richard-gang",
+        personal_url: "www.richard-gang.com",
+        resume_url: "www.richard-gang-resume.com",
+        github_url: "www.github.com/richard-gang",
+        photo: "www.richard-gang-photo.com"
+      }
+    };
+  },
+  created: function() {},
+  methods: {},
+  computed: {}
+};
+
 var UpdatePage = {
   template: "#update-page",
   data: function() {
-    return {
-      message: "Joe!",
-
-      command: "Get going !",
-
-      message1: "It's Richgang"
-    };
+    return {};
   },
   created: function() {},
   methods: {
     updateStudent: function(inputStudent) {
-      console.log("gonna update", inputStudent);
+      console.log(" update", inputStudent);
       var params = {};
       if (this.editStudentFirstName) {
         params.name = this.editStudentFirstName;
@@ -116,7 +135,8 @@ var LoginPage = {
 var router = new VueRouter({
   routes: [
     { path: "/", component: HomePage },
-    { path: "/login", component: LoginPage }
+    { path: "/login", component: LoginPage },
+    { path: "/update", component: UpdatePage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
