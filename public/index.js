@@ -6,7 +6,9 @@ var HomePage = {
     return {
       message: "Joe!",
 
-      command: "Get going !"
+      command: "Get going !",
+
+      message1: "It's Richgang"
     };
   },
   created: function() {},
