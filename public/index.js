@@ -16,7 +16,9 @@ var HomePage = {
         personal_url: "www.richard-gang.com",
         resume_url: "www.richard-gang-resume.com",
         github_url: "www.github.com/richard-gang",
-        photo: "www.richard-gang-photo.com"
+        photo: "www.richard-gang-photo.com",
+        
+
       },
 
     };
@@ -112,6 +114,92 @@ var UpdatePage = {
   computed: {}
 };
 
+var CreatePage = {
+  template: "#create-page",
+  data: function() {
+    return {
+      createStudentFirstName: "",
+      createStudentLastName: "",
+      createStudentEmail: "",
+      createStudentPhoneNumber: "",
+      createStudentBio: "",
+      createStudentLinkedinUrl: "",
+      createStudentTwitterHandle: "",
+      createStudentPersonalUrl: "",
+      createStudentResumeUrl: "",
+      createStudentGithubUrl: "",
+      createStudentPhoto: "",
+    };
+  },
+  created: function() {},
+  methods: {
+    createStudent: function(inputStudent) {
+      console.log(" create", inputStudent);
+      var params = {};
+      if (this.createStudentFirstName) {
+        params.first_name = this.createStudentFirstName;
+      }
+      if (this.createStudentLastName) {
+        params.last_name = this.createStudentBio;
+      }
+      if (this.createStudentEmail) {
+        params.email = this.createStudentEmail;
+      }
+      if (this.createStudentPhoneNumber) {
+        params.phone_number = this.createStudentPhoneNumber;
+      }
+      if (this.createStudentBio) {
+        params.bio = this.createStudentBio;
+      }
+      if (this.createStudentLinkedinUrl) {
+        params.linkedin_url = this.createStudentLinkedinUrl;
+      }
+      if (this.createStudentTwitterHandle) {
+        params.twitter_handle = this.createStudentTwitterHandle;
+      }
+      if (this.createStudentPersonalUrl) {
+        params.personal_url = this.createStudentPersonalUrl;
+      }
+      if (this.createStudentResumeUrl) {
+        params.resume_url = this.createStudentResumeUrl;
+      }
+      if (this.createStudentGithubUrl) {
+        params.github_url = this.createStudentGithubUrl;
+      }
+      if (this.createStudentPhoto) {
+        params.photo = this.createStudentPhoto;
+      }
+      axios.patch("/v1/student/" + inputStudent.id, params).then(
+        function(response) {
+          inputStudent.FirstName = response.data.FirstName;
+          inputStudent.LastName = response.data.LastName;
+          inputStudent.Email = response.data.Email;
+          inputStudent.PhoneNumber = response.data.PhoneNumber;
+          inputStudent.bio = response.data.bio;
+          inputStudent.LinkedinUrl = response.data.LinkedinUrl;
+          inputStudent.TwitterHandle = response.data.TwitterHandle;
+          inputStudent.PersonalUrl = response.data.PersonalUrl;
+          inputStudent.ResumeUrl = response.data.ResumeUrl;
+          inputStudent.GithubUrl = response.data.GithubUrl;
+          inputStudent.Photo = response.data.Photo;
+          this.createStudentFirstName = "";
+          this.createStudentLastName = "";
+          this.createStudentEmail = "";
+          this.createStudentPhoneNumber = "";
+          this.createStudentBio = "";
+          this.createStudentLinkedinUrl = "";
+          this.createStudentTwitterHandle = "";
+          this.createStudentPersonalUrl = "";
+          this.createStudentResumeUrl = "";
+          this.createStudentGithubUrl = "";
+          this.createStudentPhoto = "";
+        }.bind(this)
+      );
+    }
+  },
+  computed: {}
+};
+
 var LoginPage = {
   template: "#login-page",
   data: function() {
@@ -149,7 +237,9 @@ var router = new VueRouter({
   routes: [
     { path: "/", component: HomePage },
     { path: "/login", component: LoginPage },
-    { path: "/update", component: UpdatePage }
+    { path: "/update", component: UpdatePage },
+    { path: "/create", component: CreatePage }
+
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
