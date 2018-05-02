@@ -10,8 +10,11 @@
 </head>
 <body>
   <div id="vue-app">
+<a href="/#/">Home</a>
 <a href="/#/login">Login</a>
 <a href="/#/update">Update Student</a>
+<a href="/#/create">Create Student</a>
+
     <router-view></router-view>
     
 
@@ -63,7 +66,7 @@
    <div class="vue-component">
 
     <div class="container">
-   <h1>Update the person</h1>
+   <h1>Update the student </h1>
       <div>
         <div> Firstname: <input type="text" v-model="editStudentFirstName"> </div>
         <div> Lastname: <input type="text" v-model="editStudentLastName"> </div>
@@ -77,6 +80,29 @@
         <div>Github Url: <input type="text" v-model="editStudentGithubUrl"></div>
         <div>Photo: <input type="text" v-model="editStudentPhoto"></div>
          <button v-on:click="updateStudent(student)">Update</button>
+      </div>
+    </div>
+  </div>
+
+</template>
+<template id="create-page">
+   <div class="vue-component">
+
+    <div class="container">
+   <h1>Create New Student </h1>
+      <div>
+        <div> Firstname: <input type="text" v-model="createStudentFirstName"> </div>
+        <div> Lastname: <input type="text" v-model="createStudentLastName"> </div>
+        <div> Email: <input type="text" v-model="createStudentEmail"> </div>
+        <div>Phone Number: <input type="text" v-model="createStudentPhoneNumber"></div>
+        <div>Bio: <input type="text" v-model="createStudentBio"></div>
+        <div>Linkdin Url: <input type="text" v-model="createStudentLinkedinUrl"></div>
+        <div>Twitter Handle: <input type="text" v-model="createStudentTwitterHandle"></div>
+        <div>Personal Url: <input type="text" v-model="createStudentPersonalUrl"></div>
+        <div>Resume Url: <input type="text" v-model="createStudentResumeUrl"></div>
+        <div>Github Url: <input type="text" v-model="createStudentGithubUrl"></div>
+        <div>Photo: <input type="text" v-model="createStudentPhoto"></div>
+         <button v-on:click="createStudent(student)">Create</button>
       </div>
     </div>
   </div>
