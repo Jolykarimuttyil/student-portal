@@ -38,6 +38,30 @@
     <h2> Resume URL: {{ student.resume_url}}</h2>
     <h2> Github URL: {{ student.github_url}}</h2>
     <h2> Photo: {{ student.photo}}</h2>
+
+    <h1>Education: </h1>
+    <div v-for="education in student.educations">
+      <h2>Start Date: {{ education.start_date }}</h2>
+      <h2>End Date: {{ education.end_date }}</h2>
+      <h2>Degree: {{ education.degree }}</h2>
+      <h2>University Name: {{ education.university_name }}</h2>
+      <h2>Details: {{ education.details }}</h2>
+    </div>
+
+     <h1>Experience: </h1>
+    <div v-for="experience in student.experiences">
+      <h2>Start Date: {{ experience.start_date }}</h2>
+      <h2>End Date: {{ experience.end_date }}</h2>
+      <h2>Job Title: {{ experience.job_title }}</h2>
+      <h2>Company: {{ experience.company }}</h2>
+      <h2>Details: {{ experience.details }}</h2>
+    </div>
+
+     <h1>Skills: </h1>
+    <div v-for="skill in student.skills">
+      <li> {{ skill.skill }}</li>
+    
+    </div>
   
   </div>
 </template>
